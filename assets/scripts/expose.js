@@ -11,6 +11,7 @@ function init() {
   const soundButton = document.querySelector("button");
   const volumeIcon = document.querySelector("#volume-controls img");
   const volumeSlider = document.getElementById("volume");
+  const jsConfetti = new JSConfetti();
 
   //console.log(audio)
 
@@ -49,15 +50,13 @@ function init() {
   
   // Play the sound when the button is clicked
   soundButton.addEventListener("click", () => {
+
+    if (hornSelect.value === 'party-horn') {
+      jsConfetti.addConfetti();
+    }
     if (audio.src) {
       audio.play();
     }
   });
-
-
-/*  console.log("sound_button")
-  let sound_button = document.querySelector("button")
-  console.log(sound_button)
-  sound_button.addEventListener("click", myScript); */
 
 }
